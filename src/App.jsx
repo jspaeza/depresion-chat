@@ -1,5 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
+import Testimonios from "./components/Testimonios";
+import Videos from "./components/Videos";
 
 function App() {
   const [messages, setMessages] = useState([
@@ -12,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-  console.log(apiKey);
+
   const handleSend = async () => {
     if (input.trim() === "") return;
 
@@ -61,7 +63,7 @@ function App() {
         <h1 className="text-4xl font-bold text-blue-900">Depresión</h1>
 
         {/* Chat Bot */}
-        <div className="w-full max-w-md bg-white bg-opacity-90 rounded-xl p-4 flex flex-col space-y-2 shadow-md">
+        <div className="w-full  bg-white bg-opacity-90 rounded-xl p-4 flex flex-col space-y-2 shadow-md">
           <div className="flex-1 overflow-y-auto h-80 space-y-2">
             {messages.map((msg, index) => (
               <div
@@ -98,6 +100,9 @@ function App() {
             </button>
           </div>
         </div>
+
+        <Testimonios />
+        <Videos />
 
         {/* Video de YouTube */}
         <div className="w-full max-w-lg mt-8">
@@ -152,7 +157,7 @@ function App() {
           </ul>
 
           <h2 className="text-2xl font-bold text-blue-700 mt-6 mb-2">
-            Líneas de ayuda en Medellín 🇨🇴
+            Líneas de ayuda en Medellín
           </h2>
           <ul className="list-disc list-inside space-y-2 text-gray-700">
             <li>
