@@ -60,7 +60,9 @@ function App() {
   return (
     <div className="min-h-screen bg-[url('https://plus.unsplash.com/premium_photo-1666286163385-abe05f0326c4?q=80&w=1375&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center flex flex-col items-center p-4">
       <div className="bg-white bg-opacity-80 backdrop-blur-sm p-6 rounded-2xl shadow-2xl max-w-4xl w-full flex flex-col items-center space-y-8">
-        <h1 className="text-4xl font-bold text-blue-900">Depresión</h1>
+        <h1 className="text-4xl text-center font-bold text-blue-900">
+          No estás solo o sola. Aquí encuentras un espacio seguro para ti
+        </h1>
 
         {/* Chat Bot */}
         <div className="w-full  bg-white bg-opacity-90 rounded-xl p-4 flex flex-col space-y-2 shadow-md">
