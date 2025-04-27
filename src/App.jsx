@@ -5,6 +5,7 @@ import Videos from "./components/Videos";
 import PHQ9Test from "./components/PHQ9Test";
 import LightMapBackground from "./components/LightMapBackground";
 import TopImages from "./components/TopImages";
+import CitaMercader from "./components/CitaMercader";
 
 function App() {
   const [messages, setMessages] = useState([
@@ -69,6 +70,7 @@ function App() {
           No estás solo o sola. Aquí encuentras un espacio seguro para ti
         </h1>
 
+        <CitaMercader />
         <TopImages />
 
         {/* Chat Bot */}
