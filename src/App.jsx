@@ -12,7 +12,7 @@ function App() {
   const [loading, setLoading] = useState(false);
 
   const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
-
+  console.log(apiKey);
   const handleSend = async () => {
     if (input.trim() === "") return;
 
@@ -25,7 +25,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        import.meta.env.VITE_API_URL,
+        "https://api.openai.com/v1/completions",
         {
           model: "gpt-3.5-turbo",
           messages: [{ role: "user", content: input }],
