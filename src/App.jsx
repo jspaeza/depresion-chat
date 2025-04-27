@@ -66,7 +66,7 @@ function App() {
         </h1>
 
         {/* Chat Bot */}
-        <div className="w-full  bg-white bg-opacity-90 rounded-xl p-4 flex flex-col space-y-2 shadow-md">
+        <div className="w-full  bg-white bg-opacity-90 rounded-xl p-4 flex flex-col space-y-2 shadow-md mt-8">
           <div className="flex-1 overflow-y-auto h-80 space-y-2">
             {messages.map((msg, index) => (
               <div
