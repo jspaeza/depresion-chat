@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Testimonios from "./components/Testimonios";
 import Videos from "./components/Videos";
+import PHQ9Test from "./components/PHQ9Test";
 
 function App() {
   const [messages, setMessages] = useState([
@@ -104,6 +105,7 @@ function App() {
         </div>
 
         <Testimonios />
+        <PHQ9Test />
         <Videos />
 
         {/* Video de YouTube */}
