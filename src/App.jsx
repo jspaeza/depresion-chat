@@ -4,6 +4,7 @@ import Testimonios from "./components/Testimonios";
 import Videos from "./components/Videos";
 import PHQ9Test from "./components/PHQ9Test";
 import LightMapBackground from "./components/LightMapBackground";
+import TopImages from "./components/TopImages";
 
 function App() {
   const [messages, setMessages] = useState([
@@ -67,6 +68,8 @@ function App() {
         <h1 className="text-4xl text-center font-bold text-blue-900">
           No estás solo o sola. Aquí encuentras un espacio seguro para ti
         </h1>
+
+        <TopImages />
 
         {/* Chat Bot */}
         <div className="w-full  bg-white bg-opacity-90 rounded-xl p-4 flex flex-col space-y-2 shadow-md mt-8">
@@ -164,7 +167,7 @@ function App() {
           </ul>
 
           <h2 className="text-2xl font-bold text-blue-700 mt-6 mb-2">
-            Líneas de ayuda en Medellín
+            Quiero hablar ¿Con quien puedo hablar?
           </h2>
           <ul className="list-disc list-inside space-y-2 text-gray-700">
             <li>
@@ -182,6 +185,19 @@ function App() {
                 Línea Nacional de la Esperanza:
               </span>{" "}
               📞 (604) 604 27 84
+            </li>
+            <li>
+              <span className="font-semibold">Línea de vida Sabaneta</span>
+              📞 3052218057
+            </li>
+            <li>
+              <span className="font-semibold">Fundación Sergio Urrego</span>
+              📞 3117668666
+              <ol>
+                {" "}
+                (Especializada en temas de discriminación, (población LGBTIQ+) y
+                acoso en el ámbito educativo)
+              </ol>
             </li>
           </ul>
 

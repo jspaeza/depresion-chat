@@ -8,7 +8,7 @@ function VideoSection() {
         <iframe
           width="100%"
           height="270"
-          src="https://www.youtube.com/embed/XwD6YO_aaYs" // Reemplaza VIDEO_ID_1 por el ID de tu video
+          src="https://www.youtube.com/embed/XwD6YO_aaYs"
           title="Video 1"
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
@@ -21,7 +21,7 @@ function VideoSection() {
         <iframe
           width="100%"
           height="270"
-          src="https://www.youtube.com/embed/lYBeg7onwHY" // Reemplaza VIDEO_ID_2 por el ID de tu video
+          src="https://www.youtube.com/embed/i4dwATyTcCk"
           title="Video 2"
           frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
