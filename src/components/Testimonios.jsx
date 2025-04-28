@@ -1,68 +1,84 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 function Testimonios() {
-  const [testimonio, setTestimonio] = useState("");
-  const [testimonios, setTestimonios] = useState([]);
+  const [testimonios, setTestimonios] = useState([
+    {
+      nombre: "Anonimo",
+      mensaje:
+        "Me da vergüenza confesarlo, pero es la verdad. Quisiera decir que esto es extraordinario; que tuve un mal día, que las cosas se salieron de control y terminé aquí, pensando en morirme, pero que ya se me pasará. Esa no es la verdad. Llevo varios días, de varias semanas, de ya un par de meses, despertándome con ladrillos en el pecho. Su peso no me deja respirar. No encuentro por ningún lado energías para levantarme de la cama. Siento que todo lo que está más allá de la puerta de mi apartamento es un abismo lleno de hostilidad, caos, peligro. En mi cuarto, en mi casa, me siento rodeado por un desastre que me carcome, me tortura, me asfixia. No tengo escapatoria a la zozobra. Quisiera decir que tengo excusas; que esto que siento se debe a una serie de malas fortunas, a un duelo, a un dolor tangible, real. Quisiera poder señalarles una pierna rota y decirles: ¡por esto es que no me siento bien hoy! \nPERO No. La verdad es que todo en mi vida, en este preciso momento en el que estoy pensando en morirme, anda bien. Tengo un buen trabajo. Tengo personas que me quieren. Y las quiero. Tengo un hogar. Tengo una rutina de ejercicios que hago religiosamente. Tengo buena comida. Tengo dos gatas preciosas. Tengo antidepresivos que me tomo con juicio. Y aun así, aquí estoy; aplastado por Io intangible, Io indecible, lo confuso. Sufriendo sin razones, aparentemente Quisiera que mi mente dejara de intentar matarme, pero ahí sigue, diciéndome una, Y otra y otra, Y otra,Y otra vez todo Io que está mal conmigo.",
+    },
+    {
+      nombre:
+        "Fragmento de 'Las muertes chiquitas' de Margarita Posada Jaramillo",
+      mensaje:
+        "cuando estás triste algo te hace falta, cuando estás deprimido no te hace falta nada. Solo te hace falta el ánimo y todos gritan '¡Ánimo!' Esa palabra detestable que algunos repiten con toda la buena voluntad del mundo cuando uno está deprimido. A veces comparo la depresión con la diabetes de mi sobrino y es como si todos le gritaran '¡Azúcar!' en plan Celia Cruz cada vez que su glucómetro marca bajas en su sangre",
+    },
+    {
+      nombre: "Anonimo",
+      mensaje:
+        "El ambiente tranquilo y las respuestas empáticas me dieron mucha paz.",
+    },
+  ]);
 
-  // Cargar testimonios guardados al cargar la app
-  useEffect(() => {
-    const savedTestimonios =
-      JSON.parse(localStorage.getItem("testimonios")) || [];
-    setTestimonios(savedTestimonios);
-  }, []);
+  const [nuevoNombre, setNuevoNombre] = useState("");
+  const [nuevoMensaje, setNuevoMensaje] = useState("");
 
-  // Guardar el testimonio cuando el usuario lo envía
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (testimonio.trim() !== "") {
-      const newTestimonios = [...testimonios, testimonio];
-      setTestimonios(newTestimonios);
-      setTestimonio("");
-
-      // Guardar en localStorage
-      localStorage.setItem("testimonios", JSON.stringify(newTestimonios));
+  const handleAgregarTestimonio = () => {
+    if (nuevoNombre.trim() && nuevoMensaje.trim()) {
+      setTestimonios([
+        ...testimonios,
+        { nombre: nuevoNombre, mensaje: nuevoMensaje },
+      ]);
+      setNuevoNombre("");
+      setNuevoMensaje("");
     }
   };
 
   return (
-    <div className="w-full mx-auto my-8 p-4 bg-gray-100 rounded-lg shadow-lg">
-      <h2 className="text-2xl font-bold text-center mb-4">Testimonios</h2>
+    <div className="w-full px-6 py-10 bg-white bg-opacity-80 rounded-lg shadow-lg max-w-4xl mx-auto my-10">
+      <h2 className="text-2xl font-bold text-center mb-6 text-gray-800">
+        Testimonios
+      </h2>
 
-      {/* Formulario para agregar testimonio */}
-      <form onSubmit={handleSubmit} className="mb-6">
+      <div className="space-y-6">
+        {testimonios.map((testimonio, index) => (
+          <div
+            key={index}
+            className="border border-gray-300 p-4 rounded-lg bg-gray-100"
+          >
+            <p className="text-lg italic text-gray-700 whitespace-pre-line">
+              "{testimonio.mensaje}"
+            </p>
+            <p className="text-right font-semibold text-gray-600 mt-2">
+              - {testimonio.nombre}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-8">
+        <h3 className="text-xl font-semibold text-gray-700 mb-4">
+          Comparte tu experiencia
+        </h3>
+        <input
+          type="text"
+          placeholder="Tu nombre"
+          value={nuevoNombre}
+          onChange={(e) => setNuevoNombre(e.target.value)}
+          className="border border-gray-400 p-2 rounded w-full mb-4"
+        />
         <textarea
-          value={testimonio}
-          onChange={(e) => setTestimonio(e.target.value)}
-          placeholder="Comparte tu testimonio..."
-          className="w-full p-2 border border-gray-300 rounded-md mb-4"
-          rows="4"
+          placeholder="Tu testimonio"
+          value={nuevoMensaje}
+          onChange={(e) => setNuevoMensaje(e.target.value)}
+          className="border border-gray-400 p-2 rounded w-full mb-4 h-24"
         />
         <button
-          type="submit"
-          className="max-w-md bg-blue-500 text-white p-2 rounded-md"
+          onClick={handleAgregarTestimonio}
+          className="bg-blue-600 text-white py-2 px-6 rounded hover:bg-blue-700 transition"
         >
           Enviar Testimonio
         </button>
-      </form>
-
-      {/* Mostrar los testimonios guardados */}
-      <div>
-        <h3 className="text-xl font-semibold mb-2">Testimonios Recibidos:</h3>
-        <ul className="space-y-4">
-          {testimonios.length > 0 ? (
-            testimonios.map((testimonio, index) => (
-              <li
-                key={index}
-                className="bg-white p-4 border rounded-md shadow-sm"
-              >
-                <p className="text-gray-800">{testimonio}</p>
-              </li>
-            ))
-          ) : (
-            <p className="text-gray-500">No hay testimonios aún...</p>
-          )}
-        </ul>
       </div>
     </div>
   );

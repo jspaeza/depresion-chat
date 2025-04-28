@@ -197,7 +197,7 @@ function App() {
               📞 3117668666
               <ol>
                 {" "}
-                (Especializada en temas de discriminación, (población LGBTIQ+) y
+                (Especializada en temas de discriminación, población LGBTIQ+ y
                 acoso en el ámbito educativo)
               </ol>
             </li>
