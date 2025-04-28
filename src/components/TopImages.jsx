@@ -13,7 +13,7 @@ function TopImages() {
       alt: "Apoyo emocional",
     },
     {
-      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjbi6ad0dX13_M8_MTNdQfeBb9aFJl3GUiwxoNyrshfeSHa7GpxL6WDcz2dhApkUL5b50&usqp=CAU",
+      src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjiyGZK8hHB6n4FEKFuif2A2C00HGyIppFgw&s",
       link: "",
       alt: "Línea de ayuda Colombia",
     },
